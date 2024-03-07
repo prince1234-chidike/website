@@ -66,27 +66,60 @@ function fetchTransactions() {
   // Clear previous results
   transactionResults.innerHTML = "";
 
-  // Fetch transactions based on selected type
-  if (transactionType === "data") {
-    // Fetch data transactions
-    transactionResults.innerHTML = "<p> No Data transactions .</p>";
-  } else if (transactionType === "Transaction") {
-    // Fetch airtime transactions
-    transactionResults.innerHTML = "<p>No Transactions History.</p>";
-  } else if (transactionType === "airtime") {
-    // Fetch airtime transactions
-    transactionResults.innerHTML = "<p>No Airtime transactions.</p>";
-  } else if (transactionType === "wallet") {
-    // Fetch airtime transactions
-    transactionResults.innerHTML = "<p>No Wallet transactions.</p>";
-  } else if (transactionType === "exam") {
-    // Fetch airtime transactions
-    transactionResults.innerHTML = "<p>No Exam transactions.</p>";
-  } else {
-    // Handle other transaction types
-    transactionResults.innerHTML = "<p>No transactions History.</p>";
-  }
+  // Add a delay of 2 seconds before fetching transactions
+  setTimeout(function() {
+      // Fetch transactions based on selected type
+      if (transactionType === "data") {
+          // Fetch data transactions
+          transactionResults.innerHTML = "<p>No Data transactions.</p>";
+      } else if (transactionType === "Transaction") {
+          // Fetch airtime transactions
+          transactionResults.innerHTML = "<p>No Transactions History.</p>";
+      } else if (transactionType === "airtime") {
+          // Fetch airtime transactions
+          transactionResults.innerHTML = "<p>Airtime transactions found.</p>";
+      } else if (transactionType === "wallet") {
+          // Fetch wallet transactions
+          transactionResults.innerHTML = "<p>No Wallet transactions.</p>";
+      } else if (transactionType === "exam") {
+          // Fetch exam transactions
+          transactionResults.innerHTML = "<p>No Exam transactions.</p>";
+      } else {
+          // Handle other transaction types
+          transactionResults.innerHTML = "<p>No transactions History.</p>";
+      }
+  }, 2000); // 2 seconds delay
 }
+
+
+// function fetchTransactions() {
+//   var transactionType = document.getElementById("transactionType").value;
+//   var transactionResults = document.getElementById("transactionResults");
+
+//   // Clear previous results
+//   transactionResults.innerHTML = "";
+
+//   // Fetch transactions based on selected type
+//   if (transactionType === "data") {
+//     // Fetch data transactions
+//     transactionResults.innerHTML = "<p> No Data transactions .</p>";
+//   } else if (transactionType === "Transaction") {
+//     // Fetch airtime transactions
+//     transactionResults.innerHTML = "<p>No Transactions History.</p>";
+//   } else if (transactionType === "airtime") {
+//     // Fetch airtime transactions
+//     transactionResults.innerHTML = "<p>No Airtime transactions.</p>";
+//   } else if (transactionType === "wallet") {
+//     // Fetch airtime transactions
+//     transactionResults.innerHTML = "<p>No Wallet transactions.</p>";
+//   } else if (transactionType === "exam") {
+//     // Fetch airtime transactions
+//     transactionResults.innerHTML = "<p>No Exam transactions.</p>";
+//   } else {
+//     // Handle other transaction types
+//     transactionResults.innerHTML = "<p>No transactions History.</p>";
+//   }
+// }
 
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -169,3 +169,44 @@ $(document).ready(function () {
         }, 5000);
     }
 })
+
+document.addEventListener("DOMContentLoaded", function () {
+    var correctPin = "1234"; // Replace with your correct PIN
+    var pinInput = document.getElementById("pin");
+
+    document.getElementById("submit-btn").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        var enteredPin = pinInput.value;
+
+        if (enteredPin === correctPin) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'PIN is correct. Redirecting...',
+                timer: 2000, // Auto close after 2 seconds
+                showConfirmButton: false
+            }).then(function () {
+                window.location.href = "Dashboard.html"; // Replace with the URL you want to redirect to
+            });
+        } else {
+            Swal.fire({
+                title: 'Error!',
+                text: 'PIN is incorrect. Please try again.',
+                showCancelButton: true,
+                confirmButtonText: 'Retry',
+                cancelButtonText: 'Didn\'t receive code'
+            }).then(function (result) {
+                if (result.value) {
+                    // User clicked Retry button
+                    // Reset the value of the input field
+                    pinInput.value = "";
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    // User clicked Didn't receive code button
+                    // Redirect to another page
+                    window.location.href = "forget-password.html"; // Replace with the URL you want to redirect to
+                }
+            });
+        }
+    });
+});
