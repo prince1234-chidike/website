@@ -1,6 +1,11 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 body {
     background-color: #F2E9E4;
+    font-family: 'Poppins', sans-serif !important;
 }
+
 
 .section {
     font-family: 'Poppins', sans-serif;
