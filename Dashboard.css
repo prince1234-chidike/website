@@ -854,6 +854,11 @@ body {
         text-decoration: none;
     }
 
+    .center-text:hover {
+        color: white !important;
+        font-family: 'Poppins', sans-serif !important;
+    }
+
     .fund-section {
         margin-bottom: 5%;
     }
