@@ -42,12 +42,17 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   const bank = document.getElementById("bank").value.trim();
   const number = document.getElementById("number").value.trim();
 
-
   if (name === '' || bank === '' || number === '') {
     // Show SweetAlert message if form fields are empty
     Swal.fire({
       title: 'Oops...',
       text: 'Please fill all the fields!',
+    });
+  } else if (!/^\d{10}$/.test(number)) {
+    // Show SweetAlert message if account number is invalid
+    Swal.fire({
+      title: 'Oops...',
+      text: 'Account number must be 10 digits!',
     });
   } else {
     // Form is valid, submit it
@@ -55,9 +60,10 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     // For example, you can use AJAX to submit the form data
 
     // Clear form fields after submission
-    window.location.href = 'comfirmed-transfer.html';
+    window.location.href = 'confirmed-transfer.html';
   }
-})
+});
+
 
 function fetchTransactions() {
   var transactionType = document.getElementById("transactionType").value;
@@ -141,10 +147,10 @@ function checkPasswords() {
   } else {
     // Show SweetAlert if passwords match
     Swal.fire("Passwords match!", "Redirecting you to Dashboard.", "success")
-    .then(function () {
-      // Redirect to Dashboard.html
-      window.location.href = "Dashboard.html";
-    });
+      .then(function () {
+        // Redirect to Dashboard.html
+        window.location.href = "Dashboard.html";
+      });
     return true;
   }
 }

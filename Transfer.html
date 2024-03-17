@@ -120,12 +120,16 @@
             font-family: 'Poppins', sans-serif !important;
             width: 92%;
         }
-        .dark-mode .transfer{
+
+        .dark-mode .transfer {
             background-color: #161129;
         }
 
-        .light-mode .transfer{
+        .light-mode .transfer {
             background-color: #E9EFF2;
+        }
+        .dark-mode .navbar{
+            background-color: #161129;
         }
     </style>
 </head>
@@ -175,9 +179,9 @@
     </div>
     <div class="transfer">
 
-        <h2 class="text-center">Transfer Funds</h2>
+        <h2 class="text-center mb-4">Transfer Funds</h2>
 
-        <form id="myForm">
+        <form id="myForm" onsubmit="return validateAccount()">
             <label for="">Account Name</label>
             <input type="text" id="name" class="form-control" placeholder="Account Name">
 
@@ -187,10 +191,10 @@
             <label for="">Account Number</label>
             <input type="number" id="number" class="form-control" placeholder="Account Number">
 
-            <a class="Confirm-btn" href="comfirmed-transfer.html"><button type="submit"
-                    class="continue">Continue</button></a>
+            <button type="submit" class="continue">Continue</button>
 
         </form>
+
 
 
 
@@ -216,6 +220,14 @@
                 sidebar.style.width = "0";
                 main.style.marginLeft = "0";
             }
+            // Close sidebar when clicking outside of it
+            document.addEventListener("click", function (event) {
+                var sidebar = document.getElementById("sidebar");
+                var sidebarButton = document.querySelector(".navbar .toggle");
+                if (event.target !== sidebar && event.target !== sidebarButton) {
+                    closeSidebar();
+                }
+            });
         </script>
 
         <script>

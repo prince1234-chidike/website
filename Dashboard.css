@@ -858,6 +858,9 @@ body {
         color: white !important;
         font-family: 'Poppins', sans-serif !important;
     }
+    .dark-mode .navbar{
+        background-color: #161129;
+    }
 
     .fund-section {
         margin-bottom: 5%;
