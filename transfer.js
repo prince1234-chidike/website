@@ -67,27 +67,27 @@ function fetchTransactions() {
   transactionResults.innerHTML = "";
 
   // Add a delay of 2 seconds before fetching transactions
-  setTimeout(function() {
-      // Fetch transactions based on selected type
-      if (transactionType === "data") {
-          // Fetch data transactions
-          transactionResults.innerHTML = "<p>No Data transactions.</p>";
-      } else if (transactionType === "Transaction") {
-          // Fetch airtime transactions
-          transactionResults.innerHTML = "<p>No Transactions History.</p>";
-      } else if (transactionType === "airtime") {
-          // Fetch airtime transactions
-          transactionResults.innerHTML = "<p>Airtime transactions found.</p>";
-      } else if (transactionType === "wallet") {
-          // Fetch wallet transactions
-          transactionResults.innerHTML = "<p>No Wallet transactions.</p>";
-      } else if (transactionType === "exam") {
-          // Fetch exam transactions
-          transactionResults.innerHTML = "<p>No Exam transactions.</p>";
-      } else {
-          // Handle other transaction types
-          transactionResults.innerHTML = "<p>No transactions History.</p>";
-      }
+  setTimeout(function () {
+    // Fetch transactions based on selected type
+    if (transactionType === "data") {
+      // Fetch data transactions
+      transactionResults.innerHTML = "<p>No Data transactions.</p>";
+    } else if (transactionType === "Transaction") {
+      // Fetch airtime transactions
+      transactionResults.innerHTML = "<p>No Transactions History.</p>";
+    } else if (transactionType === "airtime") {
+      // Fetch airtime transactions
+      transactionResults.innerHTML = "<p>Airtime transactions found.</p>";
+    } else if (transactionType === "wallet") {
+      // Fetch wallet transactions
+      transactionResults.innerHTML = "<p>No Wallet transactions.</p>";
+    } else if (transactionType === "exam") {
+      // Fetch exam transactions
+      transactionResults.innerHTML = "<p>No Exam transactions.</p>";
+    } else {
+      // Handle other transaction types
+      transactionResults.innerHTML = "<p>No transactions History.</p>";
+    }
   }, 2000); // 2 seconds delay
 }
 
@@ -129,3 +129,22 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('content').style.display = 'block';
   }, 800);
 });
+
+function checkPasswords() {
+  var newPassword = document.getElementById("newPassword").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (newPassword !== confirmPassword) {
+    // Show SweetAlert if passwords don't match
+    Swal.fire("Passwords do not match!", "Please make sure your passwords match.");
+    return false;
+  } else {
+    // Show SweetAlert if passwords match
+    Swal.fire("Passwords match!", "Redirecting you to Dashboard.", "success")
+    .then(function () {
+      // Redirect to Dashboard.html
+      window.location.href = "Dashboard.html";
+    });
+    return true;
+  }
+}

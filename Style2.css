@@ -17,6 +17,21 @@ body {
 
 }
 
+.section1 {
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
+    position: relative;
+    margin: 50px auto 50px;
+    border-radius: 9px;
+    box-shadow:
+        5px 5px 10px rgba(0, 0, 0, 0.005),
+        -5px -5px 10px rgba(0, 0, 0, 0.1),
+        -5px 5px 10px rgba(0, 0, 0, 0.1),
+        5px -5px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    background-color: white;
+}
+
 .Welcome {
     font-size: 25px;
 }
@@ -54,7 +69,8 @@ body {
     text-decoration: none;
     color: white;
 }
-.Forget:hover{
+
+.Forget:hover {
     color: white;
 }
 

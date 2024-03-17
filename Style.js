@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 timer: 2000, // Auto close after 2 seconds
                 showConfirmButton: false
             }).then(function () {
-                window.location.href = "Dashboard.html"; // Replace with the URL you want to redirect to
+                window.location.href = "change-password.html"; // Replace with the URL you want to redirect to
             });
         } else {
             Swal.fire({
