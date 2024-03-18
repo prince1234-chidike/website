@@ -453,8 +453,8 @@ body {
 
 .transfer {
     margin-top: 100px;
-    width: 90%;
-    margin: 100px auto;
+    width: 100%;
+    margin: 50px auto;
     padding: 30px 20px;
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
